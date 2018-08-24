@@ -1,13 +1,13 @@
-float noiseX=0,noiseY=100;
+float noiseX=0,noiseY=0;
 void setup(){
   size(500,500);
 }
 
 void draw(){
   background(0);
-  noiseY=100;
+  noiseY=0;
   for(int i=0;i<height;i++){
-    noiseX=100;
+    noiseX=0;
    for(int j=0;j<width;j++){
      float c=noise(noiseX,noiseY);
      stroke(255*c,130+125*c,255);
