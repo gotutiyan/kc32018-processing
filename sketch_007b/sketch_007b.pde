@@ -1,4 +1,4 @@
-int size=10;
+int size=5;
 float x[]=new float[size],y[]=new float[size];
 float c[]=new float[size];
 float seedx[]=new float[size],seedy[]=new float[size],seedc[]=new float[size];
@@ -19,8 +19,9 @@ void draw(){
   for(int i=0;i<size;i++){
    x[i]=width/2*map(noise(seedx[i]),0,1,-1.5,1.5);
    y[i]=height/2*map(noise(seedy[i]),0,1,-1.5,1.5);
-   c[i]=map(noise(seedc[i]),0,1,0,1000);  //0から1000までとして扱う
-   stroke(c[i]%255,255,255,6);  //255での剰余を適用
+   c[i]=map(noise(seedc[i]),0,1,0,1000); 
+   //0から1000までとして扱う
+   stroke(c[i]%36,255,255,6);  //360での剰余を適用
    line(x[i],y[i],-x[i],-y[i]);
    seedx[i]+=0.01;
    seedy[i]+=0.01;
